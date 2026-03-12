@@ -1,9 +1,8 @@
 import numpy as np 
 
-class kNN:
-    def __init__(self, k_neighbours, distance="euclidean"):
-       self.k_neighbours = k_neighbours
-       self.distance = distance
+class KNN:
+    def __init__(self):
+       pass
 
     
     def calculate_distance(self,x1, x2):
@@ -28,7 +27,9 @@ class kNN:
         return neighbours_indexs
         
 
-    def fit(self, x_train, y_train):
+    def fit(self, x_train, y_train, k, distance):
+        self.k_neighbours = k
+        self.distance = distance
         # convert to numpy arrays for easier calculations
         self.x_train = np.array(x_train)
         self.y_train = np.array(y_train)
